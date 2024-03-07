@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BarDawg Trivia</title>
+    <link rel="stylesheet" href="Assets/css/style.css">
+</head>
+<body>
+    <div class="header">
+        <img src="assets/images/logo.png" alt="BarDawg Logo" class="logo">
+        <h1>BarDawg Trivia</h1>
+    </div>
+    <div class="game-modes">
+        <button onclick="window.location.href='classic.html';">Classic Mode</button>
+        <button onclick="window.location.href='lightning.html';">Lightning Round</button>
+        <button onclick="window.location.href='team.html';">Team Battle</button>
+    </div>
+    <script>
+        fetch('mscoringPanel.htl')
+            .then(response => response.text())
+            .then(html => {
+                document.body.insertAdjacentHTML('beforeend', html);
+                initializeScorePanel(); // Make sure this function initializes event listeners for the panel
+            });
+    </script>
+    
+</body>
+</html>
