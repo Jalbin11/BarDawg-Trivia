@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BarDawg Trivia</title>
+    <link rel="stylesheet" href="Styles/styles.css"> <!-- Ensure this path is correct -->
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="BarDawg Logo" class="logo"> <!-- Update src with your logo path -->
+        <h1>BarDawg Trivia</h1>
+    </div>
+    <div class="game-modes">
+        <button class="game-mode-btn" onclick="location.href='classic.html';">Classic Mode</button>
+        <button class="game-mode-btn" onclick="location.href='lightning.html';">Lightning Round</button>
+        <button class="game-mode-btn" onclick="location.href='team.html';">Team Battle</button>
+    </div>
+
+    <div class="scoring-panel" id="scoringPanel">
+        <div class="tab" onclick="togglePanel()">Scoring</div>
+        <div class="scoring-content">
+            <table id="scoreTable">
+                <thead>
+                    <tr>
+                        <th>Team Name</th>
+                        <th>Q1</th>
+                        <th>Q2</th>
+                        <th>Q3</th>
+                        <th>Q4</th>
+                        <th>Q5</th>
+                        <th>Q6</th>
+                        <th>Q7</th>
+                        <th>Q8</th>
+                        <th>Q9</th>
+                        <th>Q10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">Example Team</td>
+                        <td contenteditable="true">5</td>
+                        <td contenteditable="true">10</td>
+                        <td contenteditable="true">15</td>
+                        <td contenteditable="true">20</td>
+                        <td contenteditable="true">25</td>
+                        <td contenteditable="true">30</td>
+                        <td contenteditable="true">35</td>
+                        <td contenteditable="true">40</td>
+                        <td contenteditable="true">45</td>
+                        <td contenteditable="true">50</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="addTeam()">Add New Team</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Ensure this path is correct -->
+</body>
+</html>
+
