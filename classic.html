@@ -8,29 +8,58 @@
 </head>
 <body>
     <div class="container">
-        <div class="question-section">
-            <h1 class="question">What is the Capital of Germany</h1>
-            <div class="animation-space">
-                <!-- Animation or logo goes here -->
-                <img src="path-to-your-logo.png" alt="BarDawg Logo" class="logo">
+        <a class="home-link" href="index.html">&larr; Home</a>
+
+        <div id="loading" class="status-banner">Getting a round of questions from Open Trivia DB&hellip;</div>
+        <div id="error" class="status-banner error hidden">
+            <p id="error-message"></p>
+            <button id="retry-button">Try again</button>
+        </div>
+
+        <div id="game" class="hidden">
+            <div class="progress-label">Question <span id="question-number">1</span> of <span id="question-total">10</span> &middot; Correct so far: <span id="round-score">0</span></div>
+
+            <div class="question-section">
+                <h1 id="question" class="question"></h1>
             </div>
+
+            <div class="timer-section">
+                <div class="timer-bar" id="timer-bar"></div>
+                <span class="timer-label"><span id="timer-seconds">15</span>s</span>
+            </div>
+
+            <div class="answers-section" id="answers-section">
+                <button class="answer" data-index="0"></button>
+                <button class="answer" data-index="1"></button>
+                <button class="answer" data-index="2"></button>
+                <button class="answer" data-index="3"></button>
+            </div>
+
+            <button id="next-button" class="next-button hidden">Next Question</button>
         </div>
-        <div class="timer-section">
-            <div class="timer-bar"></div>
-            <span class="timer-label">Time Remaining</span>
+
+        <div id="summary" class="hidden status-banner">
+            <h2>Round Over</h2>
+            <p id="summary-score"></p>
+            <button id="play-again-button">Play Another Round</button>
         </div>
-        <div class="answers-section">
-            <button class="answer">Paris</button>
-            <button class="answer">Madrid</button>
-            <button class="answer">Berlin</button>
-            <button class="answer">Rome</button>
-        </div>
-        <button class="score-button">Score</button>
-        <div class="score-menu hidden">
-            <!-- Sub menu for scoring -->
-            <h2>Score Teams</h2>
-            <!-- Add team scoring inputs here -->
-        </div>
+
+        <p class="attribution">Questions provided by <a href="https://opentdb.com/" target="_blank" rel="noopener">Open Trivia DB</a> (CC BY-SA 4.0).</p>
     </div>
+
+    <button class="score-button" id="scoreButton">Score</button>
+    <div class="score-menu hidden" id="scoringPanel">
+        <h2>Score Teams</h2>
+        <form id="add-team-form" class="add-team-form">
+            <input type="text" id="team-name-input" placeholder="Team name" maxlength="40" required>
+            <button type="submit">Add Team</button>
+        </form>
+        <ul id="team-list" class="team-list"></ul>
+        <p id="team-list-empty" class="team-list-empty">No teams yet — add one above.</p>
+        <button id="new-game-button" class="new-game-button">New Game (reset scores)</button>
+    </div>
+
+    <script src="Assets/js/score.js"></script>
+    <script src="Assets/js/trivia.js"></script>
 </body>
 </html>

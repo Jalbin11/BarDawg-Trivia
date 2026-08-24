@@ -3,6 +3,7 @@ body, html {
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #333;
+    color: white;
 }
 
 .header {
@@ -11,8 +12,17 @@ body, html {
     padding: 20px;
 }
 
-.logo {
-    width: 100px;
+.header h1 {
+    margin: 0 0 8px;
+}
+
+.tagline {
+    margin: 0;
+    color: #ccc;
+}
+
+.game-modes {
+    padding: 20px 0;
 }
 
 .game-modes button {
@@ -22,26 +32,9 @@ body, html {
     margin: 10px;
     border: none;
     cursor: pointer;
-    display: block; /* Adjust if you prefer inline */
+    display: block;
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
+    font-size: 16px;
 }
-
-
-#scoringPanel {
-    position: fixed;
-    bottom: -100%; /* Start off screen */
-    left: 0;
-    width: 100%;
-    background-color: #9575CD; /* Example purple background */
-    transition: bottom 0.3s ease-in-out;
-}
-
-#scoringPanel.visible {
-    bottom: 0; /* Slide up */
-}
-
-/* Add styles for buttons, table, and other elements inside the panel */
-
-/* Add more styles for the scoring component and rules slideout as needed */
