@@ -64,20 +64,23 @@ body, html {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    z-index: 20;
 }
 
 .score-menu {
     position: fixed;
+    top: 0;
     bottom: 0;
     right: 0;
     background-color: #222;
     color: white;
     width: 300px;
-    height: 100%;
-    padding: 20px;
+    max-width: 90vw;
+    padding: 20px 20px 70px;
     box-shadow: -5px 0 5px rgba(0,0,0,0.5);
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
+    overflow-y: auto;
+    box-sizing: border-box;
+    z-index: 10;
 }
 
 .score-menu h2 {
@@ -86,4 +89,154 @@ body, html {
 
 .hidden {
     display: none;
+}
+
+.home-link {
+    display: inline-block;
+    margin: 16px 0 0 16px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+.status-banner {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.status-banner.error {
+    background-color: #4a2020;
+    border-radius: 8px;
+}
+
+.status-banner button {
+    background-color: #5D3FD3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.progress-label {
+    text-align: center;
+    color: #ccc;
+    margin: 16px 0;
+}
+
+.answer.correct {
+    background-color: #2e7d32;
+}
+
+.answer.incorrect {
+    background-color: #b71c1c;
+}
+
+.answer:disabled {
+    cursor: default;
+    opacity: 0.9;
+}
+
+.next-button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 28px;
+    background-color: #5D3FD3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.attribution {
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+    margin: 40px 0 20px;
+}
+
+.attribution a {
+    color: #aaa;
+}
+
+.add-team-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.add-team-form input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+}
+
+.add-team-form button {
+    background-color: #5D3FD3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.team-list {
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+    max-height: 45vh;
+    overflow-y: auto;
+}
+
+.team-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0;
+    border-bottom: 1px solid #444;
+}
+
+.team-name {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+.team-score {
+    font-weight: bold;
+    min-width: 24px;
+    text-align: right;
+}
+
+.team-adjust,
+.team-remove {
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.team-remove {
+    background-color: #6d2020;
+}
+
+.team-list-empty {
+    color: #999;
+}
+
+.new-game-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6d2020;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
